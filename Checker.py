@@ -6,8 +6,6 @@
 # Author:      laakenb
 #
 # Created:     27/03/2014
-# Copyright:   (c) laakenb 2014
-# Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
 # Script should run every hour using crontab
