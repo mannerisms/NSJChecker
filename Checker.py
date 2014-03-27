@@ -1,6 +1,6 @@
 #-------------------------------------------------------------------------------
 # Name:        CheckNewActs
-# Purpose:      This app checks for new Acts coming to North Sea Jazz 2014
+# Purpose:      This script checks for new Acts coming to North Sea Jazz 2014
 #               and sends an e-mail when one has been detected 
 #
 # Author:      laakenb
