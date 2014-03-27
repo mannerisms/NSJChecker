@@ -1,2 +1,0 @@
-username =‘GMuserNamerHere’
-password =‘GMpassWordHere’
