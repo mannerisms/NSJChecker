@@ -100,7 +100,6 @@ def sendMessage(newArtists):
     creds = []
 
     rc =  open(__location__+"/config.txt", "r")
-    print rc
     txt = rc.read()
     creds = re.findall("'([^']*)'", txt)
     rc.close()
