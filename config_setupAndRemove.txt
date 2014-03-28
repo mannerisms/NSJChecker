@@ -1,2 +1,4 @@
+# Enter Gmail credentials to use for sending e-mail
+
 username =‘GMuserNamerHere’
 password =‘GMpassWordHere’
