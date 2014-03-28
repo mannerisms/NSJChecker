@@ -12,6 +12,10 @@
 import urllib2, csv, smtplib, sys, os, re
 from email.mime.text import MIMEText
 
+# DevMode toggle stops mail from being sent and instead prints
+# mail output to console
+devMode = False
+
 # Send messages to:
 toaddrs  = ['mannerisms@gmail.com']
 
@@ -78,7 +82,9 @@ def getNewArtists():
 
     # Split the artists into a list
     for item in cleanHTML.split(","):
-        newArtists.append(item.strip().replace("&amp;","&").replace("&nbsp;","").replace("&rsquo;","'"))
+        if devMode:
+          print item.strip().replace("&amp;","&").replace("&nbsp;","").replace("&rsquo;","'")
+        newArtists.append(item.strip().replace("&amp;","&").replace("&nbsp;","").replace("&rsquo;","'").replace("&Uuml;","U"))
 
     newArtists.sort()
     return newArtists
@@ -111,12 +117,19 @@ def sendMessage(newArtists):
     username = creds[0]
     password = creds[1]
 
-    # The actual mail send
-    server = smtplib.SMTP('smtp.gmail.com:587')
-    server.starttls()
-    server.login(username,password)
-    server.sendmail(fromaddr, toaddrs, msg)
-    server.quit()
+    if(devMode):
+      print "username =",username,"password:",password,"\n"
+      print msg
+
+    else:
+      # The actual mail send
+      server = smtplib.SMTP('smtp.gmail.com:587')
+      server.starttls()
+      server.login(username,password)
+      server.sendmail(fromaddr, toaddrs, msg)
+      server.quit()
+
+
 
 if __name__ == '__main__':
     main()
