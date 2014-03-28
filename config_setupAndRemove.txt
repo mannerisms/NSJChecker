@@ -1,4 +1,5 @@
 # Enter Gmail credentials to use for sending e-mail
+# and rename file to 'config.txt'
 
 username =‘GMuserNamerHere’
 password =‘GMpassWordHere’
