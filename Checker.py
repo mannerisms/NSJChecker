@@ -17,7 +17,7 @@ from email.mime.text import MIMEText
 devMode = False
 
 # Send messages to:
-toaddrs  = ['mannerisms@gmail.com']
+toaddrs  = ['*@gmail.com']
 
 # Path to Script
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
